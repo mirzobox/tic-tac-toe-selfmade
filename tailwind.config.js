@@ -12,6 +12,9 @@ export default {
       silver: "#a8bfc9",
       "silver-hover": "#dbe8ed",
     },
+    fontFamily: {
+      outfit: ["Outfit", "Arial", "sans-serif"],
+    },
     extend: {},
   },
   plugins: [],
