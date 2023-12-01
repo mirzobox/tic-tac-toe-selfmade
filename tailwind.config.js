@@ -10,6 +10,7 @@ export default {
       "dark-navy": "#1a2a33",
       "semi-dark-navy": "#1f3641",
       silver: "#a8bfc9",
+      silver_5: "rgba(168, 191, 201, 0.05)",
       "silver-hover": "#dbe8ed",
     },
     fontFamily: {
