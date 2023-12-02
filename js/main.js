@@ -5,6 +5,7 @@ import {
   elGameSetupForm,
   elSetupSubmitter,
   elStartGameButton,
+  elTurn,
   elWith,
 } from "./html-elements.js";
 import loader from "./loader.js";
@@ -48,3 +49,5 @@ elStartGameButton.onclick = () => {
     uiUpdater(finalGameSetup);
   }, timeout);
 };
+
+setGameStartModal(false);

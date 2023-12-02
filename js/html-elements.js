@@ -4,7 +4,8 @@ const elLoader = document.getElementById("loader"),
   elSetupSubmitter = document.getElementById("setupSubmitter"),
   elConfirmGameStartModal = document.getElementById("confirmGameStartModal"),
   elStartGameButton = document.getElementById("startGameButton"),
-  elStartGameModal = document.getElementById("startGameModal");
+  elStartGameModal = document.getElementById("startGameModal"),
+  elTurn = document.getElementById("turn");
 
 export {
   elLoader,
@@ -14,4 +15,5 @@ export {
   elConfirmGameStartModal,
   elStartGameButton,
   elStartGameModal,
+  elTurn,
 };

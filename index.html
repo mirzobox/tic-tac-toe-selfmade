@@ -29,8 +29,8 @@
     </div>
 
     <!-- Game starter -->
-    <section class="fixed inset-0 z-40" id="startGameModal">
-      <div class="mx-auto flex h-full w-full max-w-[460px] items-center">
+    <section class="fixed inset-0 bg-dark-navy" id="startGameModal">
+      <div class="mx-auto flex h-full w-full max-w-[500px] items-center px-5">
         <h2 class="sr-only">Start game</h2>
         <div class="flex w-full flex-col">
           <!-- Logo  -->
@@ -152,8 +152,68 @@
       </div>
     </section>
 
+    <!-- Header  -->
+    <section class="flex h-full select-none items-center font-outfit">
+      <h2 class="sr-only">Game zone</h2>
+      <div class="mx-auto flex w-full max-w-[500px] flex-col px-5">
+        <header>
+          <div class="flex items-center justify-between">
+            <!-- Logo  -->
+            <div class="flex gap-2">
+              <img
+                class="h-8 w-8 object-contain"
+                src="img/x.svg"
+                width="32"
+                height="32"
+                alt="X icon"
+              />
+              <img
+                class="h-8 w-8 object-contain"
+                src="img/o.svg"
+                width="32"
+                height="32"
+                alt="O icon"
+              />
+            </div>
+
+            <!-- Turn -->
+            <span
+              class="flex items-center rounded-[10px] bg-semi-dark-navy px-[30px] pb-[19px] pt-[13px] shadow-dark-shadow-small"
+            >
+              <img
+                class="h-5 w-5 object-contain"
+                id="turn"
+                src="img/x.svg"
+                data-o="/img/o-small.svg"
+                data-x="/img/x.svg"
+                width="20"
+                height="20"
+                alt="X, O"
+              />
+              <span
+                class="ml-[13px] text-[16px] font-bold uppercase tracking-[1px] text-silver"
+                >Turn</span
+              >
+            </span>
+
+            <!-- Refresh  -->
+            <button
+              class="rounded-[10px] bg-silver p-4 shadow-silver-shadow-small transition hover:bg-silver-hover active:scale-95"
+            >
+              <img
+                class="h-5 w-5 object-contain"
+                src="img/refresh-icon.svg"
+                width="20"
+                height="20"
+                alt="Refresh icon"
+              />
+            </button>
+          </div>
+        </header>
+      </div>
+    </section>
+
     <!-- Confirm start game modal  -->
-    <!-- Open the modal using ID.showModal() method -->
     <dialog
       class="backdrop:bg-dark_50 modal font-outfit"
       id="confirmGameStartModal"
