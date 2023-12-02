@@ -19,10 +19,10 @@
     <!-- Styles  -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="bg-dark-navy h-full">
+  <body class="h-full bg-dark-navy">
     <!-- Loader  -->
     <div
-      class="bg-dark-navy fixed inset-0 z-50 flex items-center justify-center transition-opacity"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-dark-navy transition-opacity"
       id="loader"
     >
       <span class="loading loading-dots loading-lg bg-light-yellow"></span>
@@ -41,36 +41,28 @@
 
           <!-- Choose X O   -->
           <div
-            class="bg-semi-dark-navy shadow-dark-shadow flex flex-col rounded-[15px] px-6 pb-[30px] pt-6"
+            class="flex flex-col rounded-[15px] bg-semi-dark-navy px-6 pb-[30px] pt-6 shadow-dark-shadow"
           >
             <form id="gameSetupForm">
               <legend
-                class="text-silver mb-6 text-center text-[16px] font-bold uppercase leading-none tracking-[1px]"
+                class="mb-6 text-center text-[16px] font-bold uppercase leading-none tracking-[1px] text-silver"
               >
                 Pick player 1’s mark
               </legend>
-              <fieldset class="bg-dark-navy flex rounded-[10px] px-2 py-[9px]">
+              <fieldset class="flex rounded-[10px] bg-dark-navy px-2 py-[9px]">
                 <input
-                  class="peer/x sr-only"
+                  class="my-input-x peer/x sr-only"
                   id="x"
                   type="radio"
                   name="pickPlayer"
                   value="x"
+                  required
                 />
-                <input
-                  class="peer/o sr-only"
-                  id="o"
-                  type="radio"
-                  name="pickPlayer"
-                  value="o"
-                  checked
-                />
-
                 <label
-                  class="peer-checked/x:bg-silver hover:bg-silver_5 flex w-2/4 cursor-pointer justify-center rounded-[10px] p-[11px] transition-colors"
+                  class="my-label-x flex w-2/4 cursor-pointer justify-center rounded-[10px] p-[11px] transition-colors hover:bg-silver_5 peer-checked/x:pointer-events-none peer-checked/x:bg-silver"
                   for="x"
                   ><svg
-                    class="text-silver"
+                    class="my-svg-x text-silver transition-colors"
                     width="32"
                     height="32"
                     viewBox="0 0 64 64"
@@ -78,7 +70,6 @@
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      class="peer-checked/x:text-dark-navy"
                       fill-rule="evenodd"
                       clip-rule="evenodd"
                       d="M53.2406 1.14742C52.0691 -0.0241513 50.1696 -0.0241497 48.998 1.14742L32 18.1454L15.002 1.14742C13.8304 -0.0241506 11.9309 -0.0241496 10.7594 1.14742L1.14742 10.7594C-0.0241497 11.9309 -0.0241481 13.8304 1.14742 15.002L18.1454 32L1.14742 48.998C-0.0241506 50.1696 -0.0241496 52.0691 1.14742 53.2406L10.7594 62.8526C11.9309 64.0241 13.8304 64.0241 15.002 62.8526L32 45.8546L48.998 62.8526C50.1696 64.0242 52.0691 64.0241 53.2406 62.8526L62.8526 53.2406C64.0242 52.0691 64.0241 50.1696 62.8526 48.998L45.8546 32L62.8526 15.002C64.0242 13.8304 64.0241 11.9309 62.8526 10.7594L53.2406 1.14742Z"
@@ -87,12 +78,21 @@
                   </svg>
                 </label>
 
+                <input
+                  class="my-input-o peer/o sr-only"
+                  id="o"
+                  type="radio"
+                  name="pickPlayer"
+                  value="o"
+                  checked
+                  required
+                />
                 <label
-                  class="peer-checked/o:bg-silver hover:bg-silver_5 flex w-2/4 cursor-pointer justify-center rounded-[10px] p-[11px] transition-colors"
+                  class="my-label-o flex w-2/4 cursor-pointer justify-center rounded-[10px] p-[11px] transition-colors hover:bg-silver_5 peer-checked/o:pointer-events-none peer-checked/o:bg-silver"
                   for="o"
                 >
                   <svg
-                    class="text-silver"
+                    class="my-svg-o text-silver transition-colors"
                     width="32"
                     height="32"
                     viewBox="0 0 64 64"
@@ -100,7 +100,6 @@
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      class="peer-checked/x:text-dark-navy"
                       fill-rule="evenodd"
                       clip-rule="evenodd"
                       d="M64 32C64 14.3269 49.6731 0 32 0C14.3269 0 0 14.3269 0 32C0 49.6731 14.3269 64 32 64C49.6731 64 64 49.6731 64 32ZM18.963 32C18.963 24.7998 24.7998 18.963 32 18.963C39.2002 18.963 45.037 24.7998 45.037 32C45.037 39.2002 39.2002 45.037 32 45.037C24.7998 45.037 18.963 39.2002 18.963 32Z"

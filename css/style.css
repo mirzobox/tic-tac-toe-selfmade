@@ -23,4 +23,13 @@
     font-style: normal;
     font-display: swap;
   }
+
+  /* Change color icon  */
+  .my-input-x:checked ~ .my-label-x > .my-svg-x {
+    color: #1a2a33;
+  }
+
+  .my-input-o:checked ~ .my-label-o > .my-svg-o {
+    color: #1a2a33;
+  }
 }
