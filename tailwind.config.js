@@ -13,6 +13,7 @@ export default {
       silver_5: "rgba(168, 191, 201, 0.05)",
       silver_50: "rgba(168, 191, 201, 0.5)",
       "silver-hover": "#dbe8ed",
+      dark_50: "rgba(0, 0, 0, 0.5)",
     },
     fontFamily: {
       outfit: ["Outfit", "Arial", "sans-serif"],

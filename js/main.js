@@ -1,6 +1,18 @@
+import cssClassModifiers from "./css-class-modifiers.js";
 import getGameSetup from "./get-game-setup.js";
-import { elGameSetupForm, elSetupSubmitter, elWith } from "./html-elements.js";
+import {
+  elConfirmGameStartModal,
+  elGameSetupForm,
+  elSetupSubmitter,
+  elStartGameButton,
+  elWith,
+} from "./html-elements.js";
 import loader from "./loader.js";
+import setGameStartModal from "./set-game-start-modal.js";
+import uiUpdater from "./ui-updater.js";
+
+// Variables
+let finalGameSetup;
 
 // Loader
 window.onload = () => {
@@ -17,6 +29,22 @@ elWith.forEach((radio) => {
 elGameSetupForm.onsubmit = (e) => {
   e.preventDefault();
   const gameSetup = new FormData(elGameSetupForm);
-  const finalGameSetup = getGameSetup(gameSetup);
-  console.log(finalGameSetup);
+  finalGameSetup = getGameSetup(gameSetup);
+  // showModal() daisyUI function
+  elConfirmGameStartModal.showModal();
+};
+
+// Confirm game modal controller
+elConfirmGameStartModal.onclick = ({ target }) => {
+  target === elConfirmGameStartModal && target.close();
+};
+
+// Start game
+elStartGameButton.onclick = () => {
+  const { timeout } = cssClassModifiers;
+  setTimeout(() => {
+    loader(true);
+    setGameStartModal(false);
+    uiUpdater(finalGameSetup);
+  }, timeout);
 };

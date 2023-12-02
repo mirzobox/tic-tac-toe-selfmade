@@ -29,7 +29,7 @@
     </div>
 
     <!-- Game starter -->
-    <section class="fixed inset-0 z-40">
+    <section class="fixed inset-0 z-40" id="startGameModal">
       <div class="mx-auto flex h-full w-full max-w-[460px] items-center">
         <h2 class="sr-only">Start game</h2>
         <div class="flex w-full flex-col">
@@ -151,6 +151,38 @@
         </div>
       </div>
     </section>
+
+    <!-- Confirm start game modal  -->
+    <!-- Open the modal using ID.showModal() method -->
+    <dialog
+      class="backdrop:bg-dark_50 modal font-outfit"
+      id="confirmGameStartModal"
+    >
+      <div
+        class="modal-box w-full max-w-full rounded-none bg-semi-dark-navy p-[66px] shadow-none"
+      >
+        <h3
+          class="mb-[31px] text-center text-[40px] font-bold uppercase tracking-[2.5px] text-silver"
+        >
+          Start game?
+        </h3>
+        <div class="flex justify-center">
+          <form method="dialog">
+            <button
+              class="mr-4 cursor-pointer rounded-[10px] bg-silver p-4 font-bold uppercase tracking-[1px] text-dark-navy shadow-silver-shadow-small transition hover:bg-silver-hover active:scale-95"
+            >
+              no, cancel
+            </button>
+            <button
+              class="cursor-pointer rounded-[10px] bg-light-yellow p-4 font-bold uppercase tracking-[1px] text-dark-navy shadow-light-yellow-shadow-small transition hover:bg-light-yellow-hover active:scale-95"
+              id="startGameButton"
+            >
+              yes, start
+            </button>
+          </form>
+        </div>
+      </div>
+    </dialog>
 
     <script type="module" src="js/app.js"></script>
   </body>
