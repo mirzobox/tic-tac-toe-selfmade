@@ -1,5 +1,7 @@
+import { cpu, o } from "./elements.js";
 const gameSetupDefault = {
-  playerPick: "o",
+  playerPick: o,
+  with: cpu,
 };
 
 export default gameSetupDefault;
