@@ -1,11 +1,11 @@
 import cssClassModifiers from "./css-class-modifiers.js";
+import gameSetupDefault from "./game-setup-default.js";
 import getGameSetup from "./get-game-setup.js";
 import {
   elConfirmGameStartModal,
   elGameSetupForm,
   elSetupSubmitter,
   elStartGameButton,
-  elTurn,
   elWith,
 } from "./html-elements.js";
 import loader from "./loader.js";
@@ -13,7 +13,7 @@ import setGameStartModal from "./set-game-start-modal.js";
 import uiUpdater from "./ui-updater.js";
 
 // Variables
-let finalGameSetup;
+let finalGameSetup = gameSetupDefault;
 
 // Loader
 window.onload = () => {
@@ -42,13 +42,13 @@ elConfirmGameStartModal.onclick = ({ target }) => {
 
 // Start game
 elStartGameButton.onclick = () => {
-  const { gridSize, timeout } = cssClassModifiers;
+  const { timeout } = cssClassModifiers;
   setTimeout(() => {
     loader(true);
     setGameStartModal(false);
-    uiUpdater(finalGameSetup, gridSize);
+    uiUpdater(finalGameSetup);
   }, timeout);
 };
 
-uiUpdater(finalGameSetup, 9);
-setGameStartModal(false);
+// uiUpdater(finalGameSetup, 9);
+// setGameStartModal(false);

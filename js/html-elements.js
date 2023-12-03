@@ -7,7 +7,12 @@ const elLoader = document.getElementById("loader"),
   elStartGameModal = document.getElementById("startGameModal"),
   elTurn = document.getElementById("turn"),
   elGameZone = document.getElementById("gameZone"),
-  elBoxTemplate = document.getElementById("boxTemplate");
+  elScoreBoard = document.getElementById("scoreBoard"),
+  // Templates
+  elBoxTemplate = document.getElementById("boxTemplate"),
+  elScoreBoardElementTemplate = document.getElementById(
+    "scoreBoardElementTemplate",
+  );
 
 export {
   elLoader,
@@ -19,5 +24,9 @@ export {
   elStartGameModal,
   elTurn,
   elGameZone,
+  elScoreBoard,
+
+  // Templates
   elBoxTemplate,
+  elScoreBoardElementTemplate,
 };
