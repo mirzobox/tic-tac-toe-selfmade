@@ -42,12 +42,13 @@ elConfirmGameStartModal.onclick = ({ target }) => {
 
 // Start game
 elStartGameButton.onclick = () => {
-  const { timeout } = cssClassModifiers;
+  const { gridSize, timeout } = cssClassModifiers;
   setTimeout(() => {
     loader(true);
     setGameStartModal(false);
-    uiUpdater(finalGameSetup);
+    uiUpdater(finalGameSetup, gridSize);
   }, timeout);
 };
 
+uiUpdater(finalGameSetup, 9);
 setGameStartModal(false);
