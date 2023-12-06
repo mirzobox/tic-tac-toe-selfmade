@@ -1,15 +1,15 @@
 import gameSetupDefault from "./game-setup-default.js";
 
 const gameSetupIsUpdate = (gameSetup) => {
-  let checker = false;
+  const whichElIsUpdate = {};
 
-  for (const value in gameSetup) {
-    if (gameSetup[value] !== gameSetupDefault[value]) {
-      checker = true;
+  for (const key in gameSetup) {
+    if (gameSetup[key] !== gameSetupDefault[key]) {
+      whichElIsUpdate[key] = gameSetup[key];
     }
   }
 
-  return checker;
+  return whichElIsUpdate;
 };
 
 export default gameSetupIsUpdate;

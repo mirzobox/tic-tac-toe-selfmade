@@ -7,12 +7,11 @@ const elLoader = document.getElementById("loader"),
   elStartGameModal = document.getElementById("startGameModal"),
   elTurn = document.getElementById("turn"),
   elGameZone = document.getElementById("gameZone"),
-  elScoreBoard = document.getElementById("scoreBoard"),
+  elXScore = document.getElementById("xScore"),
+  elTieScore = document.getElementById("tieScore"),
+  elOScore = document.getElementById("oScore"),
   // Templates
-  elBoxTemplate = document.getElementById("boxTemplate"),
-  elScoreBoardElementTemplate = document.getElementById(
-    "scoreBoardElementTemplate",
-  );
+  elBoxTemplate = document.getElementById("boxTemplate");
 
 export {
   elLoader,
@@ -24,9 +23,9 @@ export {
   elStartGameModal,
   elTurn,
   elGameZone,
-  elScoreBoard,
-
+  elXScore,
+  elTieScore,
+  elOScore,
   // Templates
   elBoxTemplate,
-  elScoreBoardElementTemplate,
 };
