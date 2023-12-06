@@ -1,9 +1,11 @@
 import cssClassModifiers from "./css-class-modifiers.js";
+import { player } from "./elements.js";
 import gameSetupDefault from "./game-setup-default.js";
 import getGameSetup from "./get-game-setup.js";
 import {
   elConfirmGameStartModal,
   elGameSetupForm,
+  elPlayerMessage,
   elSetupSubmitter,
   elStartGameButton,
   elWith,
@@ -28,10 +30,16 @@ elWith.forEach((radio) => {
 });
 
 elGameSetupForm.onsubmit = (e) => {
+  const { hidden } = cssClassModifiers;
   e.preventDefault();
   const gameSetup = new FormData(elGameSetupForm);
   finalGameSetup = getGameSetup(gameSetup);
   // showModal() daisyUI function
+  if (finalGameSetup.with === player) {
+    elPlayerMessage.classList.remove(hidden);
+  } else {
+    elPlayerMessage.classList.add(hidden);
+  }
   elConfirmGameStartModal.showModal();
 };
 

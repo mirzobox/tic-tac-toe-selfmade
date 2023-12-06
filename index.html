@@ -222,9 +222,13 @@
             >
               <dt
                 class="text-[14px] font-medium uppercase tracking-[0.88px] text-dark-navy"
-              >
-                X (cpu)
-              </dt>
+                id="xStatus"
+                data-x="X"
+                data-o="O"
+                data-you="you"
+                data-cpu="cpu"
+                data-p="p1"
+              ></dt>
               <dd class="text-[24px] font-bold" id="xScore">0</dd>
             </div>
             <div
@@ -242,9 +246,13 @@
             >
               <dt
                 class="text-[14px] font-medium uppercase tracking-[0.88px] text-dark-navy"
-              >
-                O (you)
-              </dt>
+                id="oStatus"
+                data-x="X"
+                data-o="O"
+                data-you="you"
+                data-cpu="cpu"
+                data-p="p2"
+              ></dt>
               <dd class="text-[24px] font-bold" id="oScore">0</dd>
             </div>
           </dl>
@@ -260,11 +268,33 @@
       <div
         class="modal-box w-full max-w-full rounded-none bg-semi-dark-navy p-[66px] shadow-none"
       >
-        <h3
-          class="mb-[31px] text-center text-[40px] font-bold uppercase tracking-[2.5px] text-silver"
+        <div
+          class="mx-auto mb-[31px] flex w-full max-w-[600px] flex-col items-center"
         >
-          Start game?
-        </h3>
+          <h3
+            class="text-center text-[40px] font-bold uppercase tracking-[2.5px] text-silver"
+          >
+            Start game?
+          </h3>
+          <p class="mb-2 hidden text-silver" id="playerMessage">
+            If you're playing with a friend and not with a cpu, you can't choose
+            to be
+            <mark class="rounded-sm bg-silver p-1 leading-none text-dark-navy"
+              >x</mark
+            >
+            or
+            <mark class="rounded-sm bg-silver p-1 leading-none text-dark-navy"
+              >o</mark
+            >. Automatically the first player is
+            <mark class="rounded-sm bg-silver p-1 leading-none text-dark-navy"
+              >x</mark
+            >
+            and the second player is
+            <mark class="rounded-sm bg-silver p-1 leading-none text-dark-navy"
+              >o</mark
+            >.
+          </p>
+        </div>
         <div class="flex justify-center">
           <form method="dialog">
             <button

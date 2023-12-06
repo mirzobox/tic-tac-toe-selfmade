@@ -1,6 +1,8 @@
 import cssClassModifiers from "./css-class-modifiers.js";
+import gameSetupIsUpdate from "./game-setup-is-update.js";
 import { elBoxTemplate, elGameZone } from "./html-elements.js";
 import loader from "./loader.js";
+import setScoreBoard from "./set-score-board.js";
 import uiCleaner from "./ui-cleaner.js";
 
 const uiUpdater = (gameSetup) => {
@@ -15,6 +17,10 @@ const uiUpdater = (gameSetup) => {
 
   // Add elements
   elGameZone.append(fragment);
+
+  // Set score board
+  const whichElIsUpdate = gameSetupIsUpdate(gameSetup);
+  setScoreBoard(whichElIsUpdate);
 
   setTimeout(() => loader(false), timeout);
 };
