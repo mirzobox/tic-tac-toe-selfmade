@@ -1,4 +1,5 @@
 import cssClassModifiers from "./css-class-modifiers.js";
+import gameActions from "./game-actions.js";
 import gameSetupIsUpdate from "./game-setup-is-update.js";
 import { elBoxTemplate, elGameZone } from "./html-elements.js";
 import loader from "./loader.js";
@@ -12,6 +13,11 @@ const uiUpdater = (gameSetup) => {
   const fragment = document.createDocumentFragment();
   for (let i = 1; i <= gridSize; i++) {
     const elBoxClone = elBoxTemplate.content.cloneNode(true);
+    const elBoxContentClone = elBoxClone.querySelector(".js-box");
+
+    // Add actions
+    elBoxContentClone.onclick = ({ target }) => gameActions(target);
+
     fragment.appendChild(elBoxClone);
   }
 

@@ -3,7 +3,7 @@ import { elOStatus, elXStatus } from "./html-elements.js";
 
 const setScoreBoard = (whichElIsUpdate) => {
   const xData = elXStatus.dataset.x;
-  const oData = elXStatus.dataset.o;
+  const oData = elOStatus.dataset.o;
   if (Object.keys(whichElIsUpdate).length === 0) {
     elXStatus.innerText = `${xData} (${elXStatus.dataset.cpu})`;
     elOStatus.innerText = `${oData} (${elOStatus.dataset.you})`;
@@ -16,8 +16,6 @@ const setScoreBoard = (whichElIsUpdate) => {
     if (whichElIsUpdate.playerPick === x && whichElIsUpdate.with !== player) {
       elXStatus.innerText = `${xData} (${elXStatus.dataset.you})`;
       elOStatus.innerText = `${oData} (${elOStatus.dataset.cpu})`;
-      elXStatus.setAttribute("id", elOStatus.getAttribute("id"));
-      elOStatus.setAttribute("id", elXStatus.getAttribute("id"));
     }
   }
 };
