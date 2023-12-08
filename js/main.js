@@ -1,5 +1,10 @@
+import attributeSetter from "./attribute-setter.js";
 import cssClassModifiers from "./css-class-modifiers.js";
-import { player } from "./elements.js";
+import {
+  currentTurn,
+  currentTurnChanger,
+} from "./current-turn-current-turn-changer.js";
+import { o, x, player } from "./elements.js";
 import gameSetupDefault from "./game-setup-default.js";
 import getGameSetup from "./get-game-setup.js";
 import {
@@ -10,8 +15,10 @@ import {
   elStartGameButton,
   elWith,
 } from "./html-elements.js";
+import isBox from "./is-box.js";
 import loader from "./loader.js";
 import setGameStartModal from "./set-game-start-modal.js";
+import svgAttributeModifiers from "./svg-attribute-modifiers.js";
 import uiUpdater from "./ui-updater.js";
 
 // Variables
@@ -56,6 +63,28 @@ elStartGameButton.onclick = () => {
     setGameStartModal(false);
     uiUpdater(finalGameSetup);
   }, timeout);
+};
+
+document.onmouseover = ({ target }) => {
+  const { none, xFillStroke, xSvgD, oFillStroke, oSvgD } =
+    svgAttributeModifiers;
+  const checker = isBox(target);
+  if (checker) {
+    const elPath = target.querySelector(".js-box-path");
+    if (currentTurn === x) {
+      attributeSetter(elPath, {
+        fill: none,
+        stroke: xFillStroke,
+        d: xSvgD,
+      });
+    } else {
+      attributeSetter(elPath, {
+        fill: none,
+        stroke: oFillStroke,
+        d: oSvgD,
+      });
+    }
+  }
 };
 
 // uiUpdater(finalGameSetup, 9);
