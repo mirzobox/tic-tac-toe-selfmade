@@ -18,6 +18,7 @@ import {
 import isBox from "./is-box.js";
 import loader from "./loader.js";
 import setGameStartModal from "./set-game-start-modal.js";
+import setPlayerMessage from "./set-player-message.js";
 import svgAttributeModifiers from "./svg-attribute-modifiers.js";
 import uiUpdater from "./ui-updater.js";
 
@@ -37,16 +38,14 @@ elWith.forEach((radio) => {
 });
 
 elGameSetupForm.onsubmit = (e) => {
-  const { hidden } = cssClassModifiers;
   e.preventDefault();
   const gameSetup = new FormData(elGameSetupForm);
   finalGameSetup = getGameSetup(gameSetup);
+
+  // Message
+  setPlayerMessage(finalGameSetup);
+
   // showModal() daisyUI function
-  if (finalGameSetup.with === player) {
-    elPlayerMessage.classList.remove(hidden);
-  } else {
-    elPlayerMessage.classList.add(hidden);
-  }
   elConfirmGameStartModal.showModal();
 };
 
@@ -65,6 +64,7 @@ elStartGameButton.onclick = () => {
   }, timeout);
 };
 
+// Game actions
 document.onmouseover = ({ target }) => {
   const { none, xFillStroke, xSvgD, oFillStroke, oSvgD } =
     svgAttributeModifiers;
